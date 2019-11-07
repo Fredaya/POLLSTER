@@ -9,6 +9,10 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+from helloworld.wsgi import DjangoWhiteNoise
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pollster.settings')
 
 application = get_wsgi_application()
+
+application = DjangoWhiteNoise(application)
